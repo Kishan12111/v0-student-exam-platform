@@ -13,7 +13,7 @@ import { Toaster } from "@/components/ui/toaster"
 
 export default function HomePage() {
   const { user, loading } = useAuth()
-  const [authMode, setAuthMode] = useState<"login" | "register">("login")
+  const [authMode, setAuthMode] = useState("login")
   const [showAuth, setShowAuth] = useState(false)
 
   if (loading) {
