@@ -438,3 +438,72 @@ The success of renewable energy transition will depend on continued policy suppo
     score: 92,
   },
 ]
+
+// Mock quizzes data
+export const mockQuizzes: Quiz[] = [
+  {
+    id: "quiz-1",
+    editorialId: "1",
+    questions: [
+      {
+        id: "q1",
+        question: "What are the three key areas of the Digital India initiative?",
+        options: [
+          "Infrastructure, governance, and empowerment",
+          "Technology, education, and healthcare",
+          "Banking, communication, and transport",
+          "Urban development, rural development, and industry",
+        ],
+        correctAnswer: 0,
+        explanation:
+          "Digital India focuses on digital infrastructure as core utility, governance and services on demand, and digital empowerment of citizens.",
+      },
+      {
+        id: "q2",
+        question: "What is the primary objective of the BharatNet project?",
+        options: [
+          "To provide free smartphones to citizens",
+          "To connect all gram panchayats with high-speed internet",
+          "To establish digital libraries in cities",
+          "To create employment in the IT sector",
+        ],
+        correctAnswer: 1,
+        explanation:
+          "BharatNet aims to connect all gram panchayats with high-speed internet to bridge the digital divide.",
+      },
+      {
+        id: "q3",
+        question: "Which payment system has gained widespread adoption in India?",
+        options: ["Credit cards", "Debit cards", "UPI (Unified Payments Interface)", "Net banking"],
+        correctAnswer: 2,
+        explanation: "UPI has revolutionized digital payments in India with its widespread adoption and ease of use.",
+      },
+    ],
+  },
+  {
+    id: "quiz-2",
+    editorialId: "2",
+    questions: [
+      {
+        id: "q4",
+        question: "What is India's renewable energy target for 2030?",
+        options: ["200 GW", "350 GW", "500 GW", "750 GW"],
+        correctAnswer: 2,
+        explanation: "India has set an ambitious target of 500 GW renewable energy capacity by 2030.",
+      },
+      {
+        id: "q5",
+        question: "Which factors have contributed to the cost reduction in solar energy?",
+        options: [
+          "Government subsidies only",
+          "Technological advancements, economies of scale, and supportive policies",
+          "International aid",
+          "Reduced labor costs",
+        ],
+        correctAnswer: 1,
+        explanation:
+          "The cost reduction has been driven by technological advancements, economies of scale, and supportive government policies.",
+      },
+    ],
+  },
+]
