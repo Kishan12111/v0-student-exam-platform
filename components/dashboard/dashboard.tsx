@@ -10,11 +10,15 @@ import { VocabularyBuilder } from "@/components/vocabulary/vocabulary-builder"
 import { LeaderboardPage } from "@/components/gamification/leaderboard-page"
 import { AdminDashboard } from "@/components/admin/admin-dashboard"
 import { mockEditorials } from "@/lib/data"
-import { BookOpen, Calendar, Trophy, Target, LogOut, User, Home, Brain, Settings } from "lucide-react"
+import { BookOpen, Calendar, Trophy, Target, LogOut, User, Home, Brain, Settings, ArrowLeft } from "lucide-react"
 
 type DashboardView = "home" | "editorials" | "calendar" | "vocabulary" | "leaderboard" | "admin"
 
-export function Dashboard() {
+interface DashboardProps {
+  onBackToLanding?: () => void
+}
+
+export function Dashboard({ onBackToLanding }: DashboardProps) {
   const user = { name: "Demo User", role: "student" }
   const [currentView, setCurrentView] = useState<DashboardView>("home")
 
@@ -110,6 +114,12 @@ export function Dashboard() {
             <div className="flex items-center gap-4">
               <Badge variant="secondary">{user?.role === "admin" ? "Admin" : "Student"}</Badge>
               <span className="text-sm text-muted-foreground hidden sm:inline">Welcome, {user?.name}</span>
+              {onBackToLanding && (
+                <Button variant="ghost" size="sm" onClick={onBackToLanding}>
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back to Landing
+                </Button>
+              )}
               <Button variant="ghost" size="sm" onClick={() => {}}>
                 <LogOut className="w-4 h-4" />
               </Button>
