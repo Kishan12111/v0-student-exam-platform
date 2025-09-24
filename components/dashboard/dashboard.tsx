@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { useAuth } from "@/lib/auth"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -16,7 +15,7 @@ import { BookOpen, Calendar, Trophy, Target, LogOut, User, Home, Brain, Settings
 type DashboardView = "home" | "editorials" | "calendar" | "vocabulary" | "leaderboard" | "admin"
 
 export function Dashboard() {
-  const { user, logout } = useAuth()
+  const user = { name: "Demo User", role: "student" }
   const [currentView, setCurrentView] = useState<DashboardView>("home")
 
   // Get all vocabulary words from editorials
@@ -111,7 +110,7 @@ export function Dashboard() {
             <div className="flex items-center gap-4">
               <Badge variant="secondary">{user?.role === "admin" ? "Admin" : "Student"}</Badge>
               <span className="text-sm text-muted-foreground hidden sm:inline">Welcome, {user?.name}</span>
-              <Button variant="ghost" size="sm" onClick={logout}>
+              <Button variant="ghost" size="sm" onClick={() => {}}>
                 <LogOut className="w-4 h-4" />
               </Button>
             </div>
@@ -126,7 +125,7 @@ export function Dashboard() {
 }
 
 function DashboardHome({ onNavigate }: { onNavigate: (view: DashboardView) => void }) {
-  const { user } = useAuth()
+  const user = { name: "Demo User", role: "student" }
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
